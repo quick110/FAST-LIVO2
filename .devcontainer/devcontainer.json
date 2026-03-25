@@ -1,0 +1,26 @@
+// --- 修改开始 ---
+// 修改日志：2026-03-25 - 切换为使用自定义 Dockerfile 构建专属 SLAM 环境
+// 作者: @LJC
+{
+    "name": "FAST-LIVO2 Env (@LJC)",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "configureZshAsDefaultShell": true
+        }
+    },
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-iot.vscode-ros"
+            ]
+        }
+    },
+    "postCreateCommand": "echo '环境底层依赖已通过 Dockerfile 加载完毕！'"
+}
+// --- 修改结束 ---
